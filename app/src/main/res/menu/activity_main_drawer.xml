@@ -7,17 +7,17 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/cart"
-            android:title="Cart"
+            android:title="@string/menu_cart"
             android:iconTint="@color/white"
             />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_cart"
             android:icon="@drawable/order"
             android:title="Orders"
             android:iconTint="@color/white"
             />
         <item
-            android:id="@+id/nav_category"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/category"
             android:title="Category"
             android:iconTint="@color/white"

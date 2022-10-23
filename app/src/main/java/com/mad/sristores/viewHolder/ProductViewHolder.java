@@ -12,7 +12,7 @@ import com.mad.sristores.interfacese.ItemClickListener;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView productName, productDescription;
+    public TextView productName, productDescription, productQuantity, productPrice;
     public ImageView imageView;
     public ItemClickListener itemClickListener;
 
@@ -21,6 +21,8 @@ public class ProductViewHolder extends RecyclerView.ViewHolder implements View.O
 
         imageView = (ImageView) itemView.findViewById(R.id.product_image);
         productName = (TextView) itemView.findViewById(R.id.product_name);
+        productQuantity = (TextView) itemView.findViewById(R.id.product_description);
+        productPrice = (TextView) itemView.findViewById(R.id.product_price);
         productDescription = (TextView) itemView.findViewById(R.id.product_description);
     }
 

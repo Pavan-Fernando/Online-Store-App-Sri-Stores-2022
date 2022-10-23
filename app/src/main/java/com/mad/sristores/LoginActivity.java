@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mad.sristores.model.Users;
+import com.mad.sristores.prevalent.Prevalent;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -111,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                         }else if (parentDbName.equals("Users")){
                             Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            Prevalent.currentOnlineUser = users;
                             startActivity(intent);
                         }
                     }
