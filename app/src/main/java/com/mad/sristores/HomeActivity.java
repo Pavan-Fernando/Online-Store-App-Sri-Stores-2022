@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,6 +31,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.mad.sristores.databinding.ActivityHomeBinding;
 import com.mad.sristores.model.Products;
 import com.mad.sristores.prevalent.Prevalent;
+import com.mad.sristores.ui.cart.CartFragment;
+import com.mad.sristores.ui.home.HomeFragment;
 import com.mad.sristores.viewHolder.ProductViewHolder;
 import com.squareup.picasso.Picasso;
 
@@ -66,6 +69,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 R.id.nav_cart, R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
                 .build();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -108,6 +120,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 holder.productQuantity.setText(model.getProductQuantity());
                 holder.productPrice.setText("Price: " + model.getProductPrice() + "$");
                 Picasso.get().load(model.getProductImage()).into(holder.imageView);
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                        intent.putExtra("productId", model.getProductId());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @NonNull
@@ -140,7 +161,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show();
             startActivity(intent);
+        } else if(itemId == R.id.nav_settings){
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        }else if(itemId == R.id.nav_cart){
+            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+            startActivity(intent);
         }
         return true;
+
+
     }
 }
