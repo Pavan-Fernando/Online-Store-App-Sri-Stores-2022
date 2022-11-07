@@ -10,10 +10,11 @@
         android:id="@+id/product_image"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:maxHeight="200dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="5dp"
         android:cropToPadding="false"
+        android:maxHeight="200dp"
         android:onClick="setProductImage"
         android:scaleType="centerCrop"
         android:src="@drawable/image" />
@@ -30,19 +31,19 @@
         android:layout_marginRight="50dp"
         android:background="@drawable/inputs"
         />
+
     <EditText
         android:id="@+id/product_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_name"
-        android:inputType="textMultiLine"
-        android:layout_marginTop="20dp"
-        android:padding="15dp"
-        android:hint="Product Description"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/inputs"
-        />
+        android:hint="Product Description"
+        android:inputType="textMultiLine"
+        android:padding="15dp" />
     <EditText
         android:id="@+id/product_quantity"
         android:layout_width="match_parent"
@@ -77,11 +78,11 @@
         android:text="Add Product"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:padding="17dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:textSize="18sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:background="@drawable/buttons"
         />
 
 </RelativeLayout>

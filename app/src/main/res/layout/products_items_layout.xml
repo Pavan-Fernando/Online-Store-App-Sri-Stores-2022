@@ -18,10 +18,9 @@
             android:layout_height="wrap_content"
             android:text="Product Name"
             android:textAlignment="center"
+            android:textColor="@color/purple_700"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_200"
-            />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/product_image"

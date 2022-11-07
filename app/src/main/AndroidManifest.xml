@@ -14,6 +14,15 @@
         android:theme="@style/Theme.SriStores"
         tools:targetApi="31">
         <activity
+            android:name=".AdminUserProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminNewOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmFinalOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProductDetailsActivity"
             android:exported="false" />
         <activity
